@@ -58,11 +58,19 @@ App::Catable - CATAlyst BLog Engine - written by Perl cats.
 Catable stands for CATAlyst BLog Engine and aims to be a Catalyst-based blog
 engine freely available under the MIT/X11 License.
 
-=head2 METHODS
+=head1 METHODS
 
-$c->add_notification($notification_string) - create a notification to be shown to a visitor, e.g. "You have been logged out"
+=head2 add_notification
 
-$c->has_notifications - for use in templating
+$c->add_notification($notification_string) # create a notification to be shown to a visitor, e.g. "You have been logged out"
+
+=head2 has_notifications
+
+$c->has_notifications #  for use in templating
+
+=head2 flush_notifications
+
+my $notifications = $c->flush_notifications # returns an arrayref containing each notification in the session, then empties them from the session
 
 =cut
 
