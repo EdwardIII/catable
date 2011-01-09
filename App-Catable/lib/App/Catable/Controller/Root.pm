@@ -98,7 +98,8 @@ sub logout : Local {
     my ($self, $c) = @_; 
 
     $c->logout();
-    $c->response->body ("You have been logged out.");
+    $c->add_notification('You have been logged out');
+    $c->stash->{'template'} = 'index.tt2';
 
     return;
 }
